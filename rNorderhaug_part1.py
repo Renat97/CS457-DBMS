@@ -76,7 +76,7 @@ def createTB(qb):
                 print ("Table " + subDir + " created.")
                 #start of arg
                 if "(" in qb:
-                    #creating oList to load & send to file, the objects
+                    #creating oList to load & send to file, the variables passed as parameters
                     oList = []
                     #remove the (, which grabs the first variable
                     data = qb.split("(",1)[1]
@@ -185,7 +185,7 @@ def useMe(qb):
         print (err.args[0])
 
 #Function correctDB ensuring the we are in the correct directory
-# working Directory is the scope directory joined with the cwd from the os
+# working Directory is the scope directory joined with the cwd from the os, so where is rNorderhaug_part1.py located in your filesystem
 def correctDB():
     if scopeDir is "":
         raise ValueError("!No database selected")
@@ -196,17 +196,18 @@ def correctDB():
 # to create a user specified database
 def main():
     try:
-        #per instructions
+        #instructions included this
         print ("\n")
         # start a while loop
         while True:
+            # reads in a command
             cmd = ""
 
-            #per instructions dont parse lines with --
+            # as assignment instructions say to not parse lines with -- or with ;
             while not ";" in cmd and not "--" in cmd:
                 cmd += input()
 
-            #parsing command from test file
+            # always take out any semicolons, then cast it to a string with str
             cmd = cmd.split(";")[0]
             cmdStr = str(cmd)
             # always makes the string uppercase even if lower case
