@@ -158,7 +158,7 @@ def selectStar(qb):
                 newOut = TB.read()
                 print (newOut)
         else:
-            raise ValueError("!Failed to query table " + findTB + " because it does not exist.")
+            raise ValueError("!Failed to query the table " + findTB + " because it does not exist.")
     except IndexError:
         print ("!Failed to remove table because no table name specified")
     except ValueError as err:
