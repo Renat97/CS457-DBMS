@@ -148,6 +148,7 @@ def selectStar(qb):
         #check if we are in correct dir
         correctDB()
         #stringing user specified table
+        # make sure to get a space after the query as well.
         findTB = qb.split("FROM ")[1]
         #user table file
         tbFile = os.path.join(wrkDir, findTB)
@@ -167,9 +168,10 @@ def selectStar(qb):
 #Function "useMe" to use the user specified database that was requested
 def useMe(qb):
     try:
-        # use global to read and write a global variable inside a function
+        # use global to read and write a global variable inside a function,
         global scopeDir
-        #placing database in userDB
+        #placing database in userDB, the value after the USE is the name
+        # of the database that we want to use
         scopeDir = qb.split("USE ")[1]
         #as long as database userDB exists we are now using userDB,
         # the scopeDir gets set to the database's dir
