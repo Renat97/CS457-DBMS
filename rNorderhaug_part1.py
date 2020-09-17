@@ -11,6 +11,18 @@ from shutil import rmtree
 scopeDir = ""
 wrkDir = ""
 
+# sample test to run it.
+# RUN
+# CREATE DATABASE DB_1;
+# USE DB_1;
+# CREATE TABLE TBL_1 (A1 INT, A2 VARCHAR(4));
+# DROP TABLE TBL_1;
+# ALTER TABLE TBL_1 add A3 float
+# SELECT * FROM TBL_1;
+# DROP DATABASE DB_1;
+
+
+
 #Function createDB creates the user specified database and error checks as necessary
 def createDB(qb):
     #creating database dir if not already created
@@ -152,7 +164,7 @@ def selectStar(qb):
 #Function "useMe" to use the user specified database that was requested
 def useMe(qb):
     try:
-        # use global to read and write a global variable inside a function 
+        # use global to read and write a global variable inside a function
         global scopeDir
         #placing database in userDB
         scopeDir = qb.split("USE ")[1]
@@ -167,7 +179,7 @@ def useMe(qb):
     except ValueError:
         print (err.args[0])
 
-#Function correctDB ensuring the we are in the correct directory 
+#Function correctDB ensuring the we are in the correct directory
 # working Directory is the scope directory joined with the cwd from the os
 def correctDB():
     if scopeDir is "":
