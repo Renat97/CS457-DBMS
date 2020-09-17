@@ -5,8 +5,8 @@ a = input();
 
 subDir = a.split("CREATE TABLE ")[1]
         #parsing for passed
-subDir = subDir.split(" (")[0].lower()
-
-print(subDir);
+data = a.split("(",1)[1]
+data = data[:-1];
+print(data);
 
 

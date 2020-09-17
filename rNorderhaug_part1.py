@@ -71,19 +71,20 @@ def createTB(qb):
 
         if not os.path.isfile(psFile):
             #to create table this will use files which act as tables
+            # opens the psFile at that directory and writes into it
             with open(psFile, "w") as TB:
                 print ("Table " + subDir + " created.")
                 #start of arg
                 if "(" in qb:
-                    #creating oList to load & send to file
+                    #creating oList to load & send to file, the objects
                     oList = []
-                    #remove the (
+                    #remove the (, which grabs the first variable
                     data = qb.split("(",1)[1]
                     #remove the )
                     data = data[:-1]
                     #in data replace the , with |
                     data = data.replace(", " , " | ")
-                    #writing user specified data in to user created table
+                    #writing the user specified data about the table into the table
                     TB.write(data)
         else:
             raise ValueError("!Failed to create table " + subDir + " because it already exists.")
@@ -99,11 +100,11 @@ def dropTB(qb):
         correctDB()
         #getting string after DROP TABLE
         subDir = qb.split("DROP TABLE ")[1]
-        #finding table
+        #finding table in the system
         userTB = os.path.join(wrkDir, subDir)
         #checking if table is correct
         if os.path.isfile(userTB):
-            #removing table
+            #removing table, use os.remove to remove
             os.remove(userTB)
             print ("Table " + subDir + " deleted.")
         else:
@@ -127,7 +128,7 @@ def alterTB(qb):
         if os.path.isfile(myFile):
             #checking for add
             if "ADD" in qb:
-                #using a to append to end of file
+                #using a to append to end of file, this allows you to alter
                 with open(myFile, "a") as TB:
                     newStr = qb.split("ADD ")[1]
                     #write new data to table
