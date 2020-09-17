@@ -5,6 +5,8 @@ Project: PA 2
 Date: 10/21/19
 """
 
+# has create table, insert into for a specific table, update table, delete from, select name, price from product where pid != 2; delete from product where price > 150; "update product set Name where name ="
+
 import os
 import re
 

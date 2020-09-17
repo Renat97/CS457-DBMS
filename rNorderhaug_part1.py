@@ -193,6 +193,18 @@ def correctDB():
         global wrkDir
         wrkDir = os.path.join(os.getcwd(), scopeDir)
 
+def insert_into(qb):
+    try:
+        correctDB()
+        tbl_nm = qb.split("INSERT INTO ")[0] # Get the table name
+        print(tbl_nm)
+    except IndexError:
+        print ("!No database name specified")
+    except ValueError:
+        print (err.args[0])
+
+
+
 # to create a user specified database
 def main():
     try:
@@ -237,6 +249,9 @@ def main():
             #call useMe if USE is found
             elif "USE" in cmdStr:
                 useMe(cmd)
+            #call Update
+            elif "INSERT INTO" in cmdStr:
+                insert_into(cmd)
             #exit if .EXIT is found
             elif ".EXIT" in cmdStr:
                 print ("All done.")
