@@ -200,8 +200,7 @@ def insert_into(qb):
         print(tbl_nm)
     except IndexError:
         print ("!No database name specified")
-    except ValueError:
-        print (err.args[0])
+
 
 
 
