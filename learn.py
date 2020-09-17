@@ -3,9 +3,10 @@ from shutil import rmtree
 
 a = input();
 
-dir = a.split('CREATE DATABASE');
+subDir = a.split("CREATE TABLE ")[1]
+        #parsing for passed
+subDir = subDir.split(" (")[0].lower()
 
-print(dir);
+print(subDir);
 
-if os.path.exists(dir):
-    print('already exists');
+

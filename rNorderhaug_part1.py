@@ -62,8 +62,10 @@ def createTB(qb):
         correctDB()
         #getting string after create table
         subDir = qb.split("CREATE TABLE ")[1]
-        #parsing for passed
+        #parsing for passed, so this takes the actual table name out
+        # from the rest of the arguments
         subDir = subDir.split(" (")[0].lower()
+        # joins the wrkDir, and subDir path
         psFile = os.path.join(wrkDir, subDir)
         #print [subDir, psFile, wrkDir]
 
