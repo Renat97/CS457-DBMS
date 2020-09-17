@@ -1,2 +1,6 @@
 # SQLfromPython
-CS 457 Database Management Systems ~ First part is the Metadata Management, the functionalities are Database creation, deletion, as well as Table creation, deletion, updates, and basic queries.  The second part gives the Database Management System basic data manipulation, this allows us to insert tuples, delete tuples, modify tuples, basic select on tuples. The last part of the assignment is to implement Table Joins, the Database Management System can know make queries over multiple tables. I designed how the program will join tuples from two source tables. The functionalities are SQL inner join's and SQL left outer join's. Listed above are the complete functionalities of this multiple part project.
+CS 457 Database Management Systems ~ The goal of this project is to simulate a Database Management System. The commands I implemented here work the same as the SQLite DBMS.
+
+the first part is the Metadata Management, the functionalities are Database creation, deletion, and setting a Database as the Database you want to use. More features are table creation, deletion, updating the table, and using the select * query.
+
+The second part gives the Database Management System basic data manipulation, this allows us to insert data into our tables. As well as perform basic updating of the values of our tables. Basic queries are also implemented, such as being able to delete a specific value from a specific table, or many values from the same table. The "where" statement was added to filter for the queries.
